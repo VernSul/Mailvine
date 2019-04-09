@@ -1,0 +1,51 @@
+{
+  "name": "emailchecker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"react-scripts start\" \"nodemon server/server.js\"",
+    "server": "nodemon server/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.1",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "csv": "^3.1.0",
+    "csv-parse": "^2.5.0",
+    "dns": "^0.2.2",
+    "elasticsearch": "^15.4.1",
+    "email-check": "^1.1.0",
+    "email-existence": "^0.1.6",
+    "email-validator": "^2.0.4",
+    "email-verify": "^0.2.1",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "json2csv": "^4.2.1",
+    "lodash": "^4.17.11",
+    "nodemon": "^1.18.3",
+    "path": "^0.12.7",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^2.1.8",
+    "react-switch": "^4.1.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "smtp-client": "^0.3.1",
+    "smtp-protocol": "^2.4.7"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
