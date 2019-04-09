@@ -7,6 +7,10 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import * as actions from './Actions/actions';
+import privData from './private_data.json'
+
+const priv = privData[0];
+
 
 
 const mapStateToProps = store => ({
@@ -24,6 +28,7 @@ const mapDispatchToProps = dispatch => ({
 
 })
 
+
 class App extends React.Component {
     constructor(props){
         super(props);
@@ -31,9 +36,9 @@ class App extends React.Component {
         this.state = {
             selAdd: false,
             emails: [],
-            CLIENT_ID: '605121789952-64i5u4ggvju6qhlmkrkv71ol78qbk5aa.apps.googleusercontent.com',
-            API_KEY: 'AIzaSyBkrt40jx5wx3PG4S5W9B49Vm02RNh4vt0',
-            DISCOVERY_DOCS: ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"],
+            CLIENT_ID: priv.CLIENT_ID,
+            API_KEY: priv.API_KEY,
+            DISCOVERY_DOCS: [priv.DISCOVERY_DOCS],
        
             // Authorization scopes required by the API; multiple scopes can be
             // included, separated by spaces.
@@ -50,7 +55,6 @@ class App extends React.Component {
 
     async initClient() {
         const s = this.state;
-        let that = this;
         await window.gapi.client.init({
           apiKey: s.API_KEY,
           clientId: s.CLIENT_ID,
@@ -71,7 +75,7 @@ class App extends React.Component {
           }
 
 
-        }, function(error) {
+        },(error) => {
             console.log(error);
             this.appendPre(JSON.stringify(error, null, 2));
         });

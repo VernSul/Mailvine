@@ -4,3 +4,4 @@ package-lock.json
 
 #Sensitive info
 /Data
+private_data.json
